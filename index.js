@@ -8,7 +8,15 @@ const connectionString =
   "mongodb+srv://avinash:KsDh99VXs8bPOW1g@cluster0.poa8o.mongodb.net/insuranceApp?retryWrites=true&w=majority";
 
 const app = express();
-
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,POST,DELETE,PUT,PATCH,OPTIONS"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  next();
+});
 app.use(express.json());
 app.use("/policy", PolicyRoutes);
 
