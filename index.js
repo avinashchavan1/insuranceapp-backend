@@ -24,7 +24,7 @@ app.get("*", function (req, res) {
 });
 mongoose.connect(connectionString).then(async () => {
   console.log("Connected");
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
   //   const policy = await Policy.findOne({ id: 12347 }).populate("customer_id");
   //   console.log(policy);
 });
