@@ -19,7 +19,9 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use("/policy", PolicyRoutes);
-
+app.get("*", function (req, res) {
+  res.status(404).send([]);
+});
 mongoose.connect(connectionString).then(async () => {
   console.log("Connected");
   app.listen(3000);
