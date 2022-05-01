@@ -16,7 +16,7 @@ router.get("/userId/:id", async (req, res, next) => {
   const userId = req.params.id;
   const user = await User.findOne({ id: userId });
   if (user === null) {
-    return res.status(400).json({ message: "User not found" });
+    return res.status(400).json([]);
   }
   const policy = await Policy.find({ customer_id: user._id }).populate(
     "customer_id"
