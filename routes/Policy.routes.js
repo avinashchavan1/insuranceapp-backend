@@ -26,7 +26,10 @@ router.get("/userId/:id", async (req, res, next) => {
 });
 
 router.get("/policyId/:id", async (req, res, next) => {
-  const policyId = req.params.id;
+  let policyId = +req.params.id;
+  if (isNaN(policyId)) {
+    policyId = -1;
+  }
   const policy = await Policy.find({ id: policyId }).populate("customer_id");
   res.json(policy).status(200);
 });
