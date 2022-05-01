@@ -5,8 +5,6 @@ The Insurance App backend is built using REST Framework. The backend will serve 
 ## Technologies used
 - NodeJs
 - ExpressJs
-- TypeScript
-- TypeORM
 - MongoDB 
 
 ## Features
