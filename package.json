@@ -5,8 +5,10 @@
   "main": "index.js",
   "engines": {"node": "16.14.2"},
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon index.js"
+
   },
   "author": "",
   "license": "ISC",
